@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decrypt &amp; Extract | SecurePixel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <nav class="navbar shell"><a class="brand" href="/"><span class="brand-mark">✦</span><span>Secure<span class="accent">Pixel</span></span></a><div class="nav-links"><a href="/encrypt">Encrypt</a><a class="active" href="/decrypt">Decrypt</a></div></nav>
+  <main class="tool-page shell"><div class="tool-intro"><a class="back-link" href="/">← Back home</a><span class="kicker">Recipient workspace</span><h1>Decrypt &amp; reveal<br><em>what's inside.</em></h1><p>Upload the SecurePixel PNG and enter the password that protects its hidden payload.</p></div>
+    <form id="decrypt-form" class="tool-card" enctype="multipart/form-data"><div class="form-step"><div class="step-heading"><span>01</span><div><h2>Choose the encrypted PNG</h2><p>Only PNG files produced by SecurePixel contain a compatible payload.</p></div></div><label class="drop-zone" id="decrypt-drop"><input id="decrypt-image" name="image" type="file" accept="image/png,image/jpeg"><span class="upload-icon">↑</span><strong>Drop the image here</strong><small>or browse from your device · max 12 MB</small></label><div class="preview-wrap" id="decrypt-preview-wrap"><img id="decrypt-preview" alt="Selected encrypted image"><span id="decrypt-file-name"></span></div></div>
+      <div class="form-step"><div class="step-heading"><span>02</span><div><h2>Enter the password</h2><p>Authentication protects the message from incorrect guesses and tampering.</p></div></div><label class="field-label" for="decrypt-password">Password</label><div class="password-field"><input id="decrypt-password" name="password" type="password" autocomplete="current-password" placeholder="Enter the sender's password"><button type="button" class="visibility-toggle" data-target="decrypt-password" aria-label="Show password">◉</button></div></div>
+      <div id="decrypt-notice" class="notice" role="status"></div><button class="button button-primary button-wide" type="submit"><span class="button-label">Decrypt Message</span><span class="spinner"></span><span>↗</span></button><p class="form-privacy">✦ The decrypted message is displayed only in this session.</p>
+    </form>
+    <div id="decrypt-result" class="message-result"><div class="result-icon">✓</div><div><span class="kicker">Authenticated message</span><h2>Secret revealed.</h2><div id="secret-output" class="secret-output"></div></div></div>
+  </main><script src="{{ url_for('static', filename='js/script.js') }}"></script><script>SecurePixel.initDecrypt();</script>
+</body></html>

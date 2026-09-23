@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SecurePixel encrypts secret messages before hiding them in PNG images.">
+  <title>SecurePixel | Hide it. Encrypt it. Share it securely.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <nav class="navbar shell"><a class="brand" href="/"><span class="brand-mark">✦</span><span>Secure<span class="accent">Pixel</span></span></a><div class="nav-links"><a href="/encrypt">Encrypt</a><a href="/decrypt">Decrypt</a></div></nav>
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy reveal"><div class="eyebrow"><span class="status-dot"></span> Private by design</div><h1>Messages that<br><span class="accent">leave no trace.</span></h1><p class="hero-text">Encrypt a secret with a password, then tuck it inside an ordinary image. Only someone with the right image and password can reveal what is inside.</p><div class="hero-actions"><a class="button button-primary" href="/encrypt">Encrypt &amp; Hide <span>↗</span></a><a class="button button-ghost" href="/decrypt">Decrypt &amp; Extract</a></div><div class="privacy-line"><span>◉</span> No messages, passwords, or images are permanently stored.</div></div>
+      <div class="hero-visual reveal reveal-delay"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="signal-card"><div class="signal-top"><span class="mini-label">PAYLOAD STATUS</span><span class="live-pill">SECURED</span></div><div class="signal-core"><span class="lock-icon">⌁</span><div><strong>AES-256-GCM</strong><small>Authenticated encryption</small></div></div><div class="signal-row"><span>PBKDF2 / SHA-256</span><span>600,000 rounds</span></div><div class="signal-bar"><i></i></div><div class="signal-foot"><span>LSB CHANNELS</span><span>R · G · B</span></div></div></div>
+    </section>
+    <section class="section shell"><div class="section-heading"><div><span class="kicker">Simple by nature</span><h2>From message to<br><em>meaningful pixels.</em></h2></div><p>SecurePixel handles the cryptographic heavy lifting, so your workflow stays as simple as sharing an image.</p></div><div class="steps"><article class="step reveal"><span class="step-number">01</span><h3>Choose an image</h3><p>Drop in a PNG, JPG, or JPEG. We convert everything to a lossless PNG for the final file.</p></article><article class="step reveal reveal-delay"><span class="step-number">02</span><h3>Lock your secret</h3><p>Your password derives a unique key. AES-GCM encrypts and authenticates the message before it goes anywhere.</p></article><article class="step reveal reveal-delay-2"><span class="step-number">03</span><h3>Share the pixels</h3><p>The encrypted payload is distributed across RGB least-significant bits. The image still looks completely ordinary.</p></article></div></section>
+    <section class="security-band"><div class="shell security-inner"><div><span class="kicker">Built for discretion</span><h2>Security is the<br><em>default setting.</em></h2></div><div class="security-list"><div><span class="feature-icon">⌑</span><div><strong>AES-256-GCM</strong><p>Authenticated encryption detects any tampering.</p></div></div><div><span class="feature-icon">⟐</span><div><strong>Fresh randomness</strong><p>Every message gets a new salt and nonce.</p></div></div><div><span class="feature-icon">◌</span><div><strong>Memory-only processing</strong><p>There is no database and no permanent upload storage.</p></div></div></div></div></section>
+    <section class="shell privacy-panel"><span class="privacy-symbol">✦</span><div><strong>Your secret message is encrypted before being hidden inside the image.</strong><p>SecurePixel does not permanently store your password or secret message.</p></div></section>
+  </main>
+  <footer class="shell footer"><span>© 2026 SecurePixel</span><span>Hide it. Encrypt it. Share it securely.</span></footer>
+</body>
+</html>
